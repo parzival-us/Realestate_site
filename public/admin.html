@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BanaMalati Infra Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="login-view" data-login-view>
+        <div class="login-visual">
+          <a class="brand admin-brand" href="/">
+            <span class="brand-mark">BI</span>
+            <span>
+              <strong>BanaMalati Infra</strong>
+              <small>Admin panel</small>
+            </span>
+          </a>
+          <h1>Manage listings, inquiries, bookings, and site content.</h1>
+          <p>Default admin login is seeded from your environment variables.</p>
+        </div>
+        <form class="form-panel login-panel" data-admin-login>
+          <h2>Admin Login</h2>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" value="admin@banamalatiinfra.com" required autocomplete="username">
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" value="Admin@12345" required autocomplete="current-password">
+          </label>
+          <button class="solid-button" type="submit">Sign in</button>
+          <p class="form-status" data-admin-login-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view hidden>
+        <header class="admin-header">
+          <a class="brand" href="/">
+            <span class="brand-mark">BI</span>
+            <span>
+              <strong>BanaMalati Infra</strong>
+              <small>Admin workspace</small>
+            </span>
+          </a>
+          <div class="header-actions">
+            <a class="ghost-button compact" href="/">View site</a>
+            <button class="solid-button compact" type="button" data-admin-logout>Sign out</button>
+          </div>
+        </header>
+
+        <div class="stats-grid" data-stats-grid></div>
+
+        <div class="admin-tabs" role="tablist" aria-label="Admin sections">
+          <button class="tab-button active" type="button" data-tab="properties">Properties</button>
+          <button class="tab-button" type="button" data-tab="inquiries">Inquiries</button>
+          <button class="tab-button" type="button" data-tab="bookings">Bookings</button>
+          <button class="tab-button" type="button" data-tab="content">Content</button>
+        </div>
+
+        <section class="admin-panel active" data-panel="properties">
+          <div class="admin-grid">
+            <form class="form-panel admin-form" data-property-form>
+              <h2 data-property-form-title>Add Property</h2>
+              <input type="hidden" name="id">
+              <label>
+                <span>Title</span>
+                <input type="text" name="title" required>
+              </label>
+              <label>
+                <span>Type</span>
+                <select name="listing_type">
+                  <option>Apartment</option>
+                  <option>Villa</option>
+                  <option>Duplex</option>
+                  <option>Land</option>
+                  <option>Farmland</option>
+                  <option>Commercial</option>
+                </select>
+              </label>
+              <label>
+                <span>City</span>
+                <input type="text" name="city" required>
+              </label>
+              <label>
+                <span>State</span>
+                <input type="text" name="state" value="Odisha" required>
+              </label>
+              <label class="full-span">
+                <span>Address</span>
+                <input type="text" name="address">
+              </label>
+              <label>
+                <span>Price</span>
+                <input type="number" name="price" min="0" step="1000" required>
+              </label>
+              <label>
+                <span>Price label</span>
+                <input type="text" name="price_label" placeholder="98 Lakh">
+              </label>
+              <label>
+                <span>Area</span>
+                <input type="number" name="area" min="0" step="1" required>
+              </label>
+              <label>
+                <span>Area unit</span>
+                <input type="text" name="area_unit" value="sq ft">
+              </label>
+              <label>
+                <span>Bedrooms</span>
+                <input type="number" name="bedrooms" min="0" step="1" value="0">
+              </label>
+              <label>
+                <span>Bathrooms</span>
+                <input type="number" name="bathrooms" min="0" step="1" value="0">
+              </label>
+              <label>
+                <span>Status</span>
+                <select name="status">
+                  <option>Available</option>
+                  <option>Ready to Move</option>
+                  <option>Booking Open</option>
+                  <option>Under Construction</option>
+                  <option>Sold Out</option>
+                </select>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="featured">
+                <span>Featured</span>
+              </label>
+              <label class="full-span">
+                <span>Image URL</span>
+                <input type="url" name="image_url">
+              </label>
+              <label class="full-span">
+                <span>Highlights</span>
+                <input type="text" name="highlights" placeholder="Gated campus, Parking, Park">
+              </label>
+              <label class="full-span">
+                <span>Description</span>
+                <textarea name="description" rows="4"></textarea>
+              </label>
+              <div class="form-actions full-span">
+                <button class="solid-button" type="submit">Save Property</button>
+                <button class="ghost-button" type="button" data-property-reset>Reset</button>
+              </div>
+              <p class="form-status full-span" data-property-status role="status"></p>
+            </form>
+            <div class="table-panel">
+              <div class="table-heading">
+                <h2>Property Inventory</h2>
+                <button class="ghost-button compact" type="button" data-refresh-properties>Refresh</button>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Type</th>
+                      <th>City</th>
+                      <th>Status</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody data-admin-properties></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="inquiries">
+          <div class="table-panel">
+            <div class="table-heading">
+              <h2>Customer Inquiries</h2>
+              <button class="ghost-button compact" type="button" data-refresh-inquiries>Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Property</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-inquiries></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="bookings">
+          <div class="table-panel">
+            <div class="table-heading">
+              <h2>Site Visit Bookings</h2>
+              <button class="ghost-button compact" type="button" data-refresh-bookings>Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Property</th>
+                    <th>Date</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-bookings></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="content">
+          <div class="content-editor" data-content-editor></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

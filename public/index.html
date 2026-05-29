@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BanaMalati Infra | Real Estate, Land and Projects</title>
+    <meta name="description" content="BanaMalati Infra real estate listings, land parcels, project galleries, inquiries, bookings, and customer support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="BanaMalati Infra home">
+        <span class="brand-mark">BI</span>
+        <span>
+          <strong>BanaMalati Infra</strong>
+          <small>Real estate and land advisory</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#properties">Properties</a>
+        <a href="#land">Land</a>
+        <a href="#projects">Projects</a>
+        <a href="#inquire">Inquire</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="ghost-button compact" type="button" data-account-button>Sign in</button>
+        <a class="solid-button compact" href="/admin">Admin</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section" id="home" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Odisha property specialists</p>
+          <h1 id="hero-title" data-content="hero-title">BanaMalati Infra</h1>
+          <p class="hero-copy" data-content="hero-body">
+            Premium homes, land parcels, and commercial projects across Odisha with clear guidance from first visit to final handover.
+          </p>
+          <div class="hero-actions">
+            <a class="solid-button" href="#properties">Explore Listings</a>
+            <button class="outline-button" type="button" data-open-lead="booking">Book Site Visit</button>
+          </div>
+        </div>
+        <div class="hero-metrics" aria-label="Company highlights">
+          <div>
+            <strong>150+</strong>
+            <span>Families advised</span>
+          </div>
+          <div>
+            <strong>42</strong>
+            <span>Active listings</span>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Growth corridors</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-band" aria-label="Property search">
+        <form class="search-form" data-search-form>
+          <label>
+            <span>Keyword</span>
+            <input type="search" name="keyword" placeholder="Project, locality, city">
+          </label>
+          <label>
+            <span>Type</span>
+            <select name="type" data-type-filter>
+              <option value="">All types</option>
+            </select>
+          </label>
+          <label>
+            <span>City</span>
+            <select name="city" data-city-filter>
+              <option value="">All cities</option>
+            </select>
+          </label>
+          <label>
+            <span>Budget up to</span>
+            <select name="maxPrice">
+              <option value="">Any budget</option>
+              <option value="3000000">30 Lakh</option>
+              <option value="7000000">70 Lakh</option>
+              <option value="10000000">1 Cr</option>
+              <option value="15000000">1.5 Cr</option>
+            </select>
+          </label>
+          <button class="solid-button" type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="content-section" id="properties" aria-labelledby="properties-title">
+        <div class="section-heading">
+          <p class="eyebrow">Featured inventory</p>
+          <h2 id="properties-title">Homes and commercial spaces</h2>
+          <p>Verified options for home buyers, investors, and businesses looking for dependable locations.</p>
+        </div>
+        <div class="listing-grid" data-property-grid></div>
+      </section>
+
+      <section class="content-section accent-section" id="land" aria-labelledby="land-title">
+        <div class="section-heading">
+          <p class="eyebrow">Land bank</p>
+          <h2 id="land-title">Residential plots and farm parcels</h2>
+          <p>Clear-title land opportunities with practical access, growth potential, and site-visit support.</p>
+        </div>
+        <div class="listing-grid compact-grid" data-land-grid></div>
+      </section>
+
+      <section class="gallery-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Project gallery</p>
+          <h2 id="projects-title">Spaces, streets, and sites</h2>
+          <p>Current project visuals from residential, commercial, and land development categories.</p>
+        </div>
+        <div class="project-gallery" data-project-gallery></div>
+      </section>
+
+      <section class="lead-section" id="inquire" aria-labelledby="lead-title">
+        <div>
+          <p class="eyebrow">Customer desk</p>
+          <h2 id="lead-title">Tell us what you are looking for</h2>
+          <p class="lead-copy">
+            Share your preferred location, budget, and property type. The BanaMalati Infra team will respond with matching options and visit slots.
+          </p>
+          <div class="service-list" aria-label="Customer support areas">
+            <span>Property shortlisting</span>
+            <span>Land consultation</span>
+            <span>Site visit booking</span>
+            <span>Document coordination</span>
+          </div>
+        </div>
+        <form class="form-panel" data-inquiry-form>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email">
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" autocomplete="tel">
+          </label>
+          <label>
+            <span>Property</span>
+            <select name="property_id" data-property-select>
+              <option value="">General inquiry</option>
+            </select>
+          </label>
+          <label class="full-span">
+            <span>Message</span>
+            <textarea name="message" rows="4" required placeholder="Preferred city, budget, and property type"></textarea>
+          </label>
+          <button class="solid-button full-span" type="submit">Send Inquiry</button>
+          <p class="form-status" data-inquiry-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-media">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80" alt="Modern residential property with landscaped frontage">
+        </div>
+        <div class="contact-details">
+          <p class="eyebrow">Visit or call</p>
+          <h2 id="contact-title" data-content="contact-title">BanaMalati Infra Sales Office</h2>
+          <p data-content="contact-body">Plot 18, Jaydev Vihar, Bhubaneswar, Odisha 751013</p>
+          <dl>
+            <div>
+              <dt>Phone</dt>
+              <dd data-contact="phone">+91 98765 43210</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd data-contact="email">sales@banamalatiinfra.com</dd>
+            </div>
+            <div>
+              <dt>Hours</dt>
+              <dd data-contact="hours">Mon-Sat, 10:00 AM - 7:00 PM</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>BanaMalati Infra</span>
+      <span>Homes, land, commercial projects, and advisory.</span>
+    </footer>
+
+    <dialog class="modal" data-lead-modal>
+      <form class="modal-panel" data-lead-form method="dialog">
+        <button class="icon-button close-button" value="cancel" type="button" data-close-lead aria-label="Close">x</button>
+        <h2 data-lead-title>Property Inquiry</h2>
+        <p data-lead-subtitle>Our team will contact you with the next available details.</p>
+        <input type="hidden" name="property_id" data-lead-property-id>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email">
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label data-booking-only hidden>
+          <span>Visit date</span>
+          <input type="date" name="preferred_date">
+        </label>
+        <label data-booking-only hidden>
+          <span>Visit time</span>
+          <input type="time" name="preferred_time">
+        </label>
+        <label class="full-span">
+          <span>Message</span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button class="solid-button full-span" type="submit">Submit</button>
+        <p class="form-status" data-lead-status role="status"></p>
+      </form>
+    </dialog>
+
+    <dialog class="modal" data-account-modal>
+      <form class="modal-panel account-panel" data-account-form method="dialog">
+        <button class="icon-button close-button" value="cancel" type="button" data-close-account aria-label="Close">x</button>
+        <h2 data-account-title>Customer Sign In</h2>
+        <p data-account-copy>Access your BanaMalati Infra account.</p>
+        <label data-register-only hidden>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label data-register-only hidden>
+          <span>Phone</span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" required autocomplete="current-password">
+        </label>
+        <button class="solid-button full-span" type="submit" data-account-submit>Sign in</button>
+        <button class="ghost-button full-span" type="button" data-account-toggle>Create account</button>
+        <button class="ghost-button full-span" type="button" data-account-logout hidden>Sign out</button>
+        <p class="form-status" data-account-status role="status"></p>
+      </form>
+    </dialog>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
